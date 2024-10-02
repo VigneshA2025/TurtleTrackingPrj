@@ -20,7 +20,11 @@ line_list = file_object.readlines()
 file_object.close()
 
 #Pretend we read one line of data from the file
-lineString = line_list[200]
+for lineString in line_list:
+    # Check if line is data line
+    if lineString[0]in ("#","u"):
+        continue
+
 
 #Split the string into a list of data items
 lineData = lineString.split()
@@ -34,3 +38,8 @@ obs_lon = lineData[7]
 
 #Print the location of sara
 print(f"Record {record_id} indicates Sara was seen at lat:{obs_lat},lon:{obs_lon} on {obs_date}")
+
+
+
+
+
