@@ -42,9 +42,11 @@ for lineString in line_list:
     obs_lat = lineData[6]
     obs_lon = lineData[7]
 
-    #Add Items to dictionaries
-    date_dict[record_id] = obs_date
-    location_dict[record_id] = (obs_lat, obs_lon)
+    #Determine if location class criteria is met
+    if obs_lc in ("1","2","3"):
+        #Add Items to dictionaries
+        date_dict[record_id] = obs_date
+        location_dict[record_id] = (obs_lat, obs_lon)
 
 
     #Print the location of sara
